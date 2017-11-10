@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from storage import init_storage, get_storage, RDBMSStorageBase, DB_URI
+from .storage import init_storage, get_storage, RDBMSStorageBase, DB_URI
 
 __all__ = [init_storage, get_storage, RDBMSStorageBase, DB_URI]
 
