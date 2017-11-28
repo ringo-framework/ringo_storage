@@ -19,23 +19,23 @@ test_requirements = [
 ]
 
 setup(
-    name='ringo_storage',
+    name='tedega_storage',
     version='0.1.0',
-    description="Persistance API of Ringo",
+    description="Persistance API of Tedega",
     long_description=readme + '\n\n' + history,
     author="Torsten Irländer",
     author_email='torsten.irlaender@googlemail.com',
-    url='https://github.com/toirl/ringo_storage',
+    url='https://github.com/toirl/tedega_storage',
     packages=[
-        'ringo_storage',
+        'tedega_storage',
     ],
-    package_dir={'ringo_storage':
-                 'ringo_storage'},
+    package_dir={'tedega_storage':
+                 'tedega_storage'},
     include_package_data=True,
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='ringo_storage',
+    keywords='tedega_storage',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

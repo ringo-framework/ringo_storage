@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-test_ringo_storage
+test_tedega_storage
 ----------------------------------
 
-Tests for `ringo_storage` module.
+Tests for `tedega_storage` module.
 """
 import sqlalchemy as sa
 import pytest
 import datetime
-from ringo_storage.storage import (
+from tedega_storage.storage import (
     ENGINE,
     RDBMSStorageBase,
     get_storage,

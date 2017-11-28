@@ -1,4 +1,4 @@
-* Ringo Storage version:
+* Tedega Storage version:
 * Python version:
 * Operating System:
 

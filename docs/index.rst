@@ -1,4 +1,4 @@
-Welcome to Ringo Storage's documentation!
+Welcome to Tedega Storage's documentation!
 ======================================
 
 Contents:

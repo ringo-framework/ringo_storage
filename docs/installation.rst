@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install Ringo Storage, run this command in your terminal:
+To install Tedega Storage, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install ringo_storage
+    $ pip install tedega_storage
 
-This is the preferred method to install Ringo Storage, as it will always install the most recent stable release. 
+This is the preferred method to install Tedega Storage, as it will always install the most recent stable release. 
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for Ringo Storage can be downloaded from the `Github repo`_.
+The sources for Tedega Storage can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/toirl/ringo_storage
+    $ git clone git://github.com/toirl/tedega_storage
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/toirl/ringo_storage/tarball/master
+    $ curl  -OL https://github.com/toirl/tedega_storage/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/toirl/ringo_storage
-.. _tarball: https://github.com/toirl/ringo_storage/tarball/master
+.. _Github repo: https://github.com/toirl/tedega_storage
+.. _tarball: https://github.com/toirl/tedega_storage/tarball/master
