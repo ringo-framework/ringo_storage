@@ -19,7 +19,7 @@ from tedega_storage.storage import (
 )
 
 
-class Testmodel(RDBMSStorageBase):
+class DummyModel(RDBMSStorageBase):
     __tablename__ = "teststorage"
     id = sa.Column("id", sa.Integer, primary_key=True)
     dummy_date = sa.Column("dummy_date", sa.Date)
@@ -48,7 +48,7 @@ def test_scoped_session():
 def test_storage_crud():
     new_id = None
     with get_storage() as storage:
-        new = Testmodel()
+        new = DummyModel()
         new.dummy_string = "Foo"
         new.dummy_date = datetime.date.today()
         new_id = storage.create(new)
@@ -59,28 +59,28 @@ def test_storage_crud():
 
     with pytest.raises(Exception):
         with get_storage() as storage:
-            new = Testmodel()
+            new = DummyModel()
             new.dummy_string = "Foo"
             new.dummy_date = "XXX"
             new_id = storage.create(new)
 
     with get_storage() as storage:
-        loaded = storage.read(Testmodel, new_id)
+        loaded = storage.read(DummyModel, new_id)
         assert loaded.dummy_string == "Foo"
         loaded.dummy_string = "Foo2"
         storage.update(loaded)
 
     with get_storage() as storage:
-        loaded = storage.read(Testmodel, new_id)
+        loaded = storage.read(DummyModel, new_id)
         assert loaded.dummy_string == "Foo2"
 
     with get_storage() as storage:
-        loaded = storage.read(Testmodel, new_id)
+        loaded = storage.read(DummyModel, new_id)
         storage.delete(loaded)
 
     with pytest.raises(Exception):
         with get_storage() as storage:
-            loaded = storage.read(Testmodel, new_id)
+            loaded = storage.read(DummyModel, new_id)
 
     # DetachedInstanceError
     with pytest.raises(Exception):
