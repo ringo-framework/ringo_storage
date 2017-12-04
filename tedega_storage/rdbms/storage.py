@@ -6,23 +6,6 @@ from contextlib import contextmanager
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.event import listen
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-
-
-def get_storage():
-    global STORAGE
-    return STORAGE(ENGINE)
-
-
-def init_storage():
-    RDBMSStorageBase.metadata.create_all(ENGINE)
-
-
-########################################################################
-#                   RDMS storage based on SQLAlchemy                   #
-########################################################################
-
-RDBMSStorageBase = declarative_base()
 
 
 @contextmanager
@@ -61,7 +44,7 @@ class Storage(object):
 
         """
         self.engine = engine
-        RDBMSStorageBase.metadata.create_all(self.engine)
+        #RDBMSStorageBase.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
 
@@ -89,8 +72,11 @@ class Storage(object):
             raise
         return item_id
 
-    def read(self, clazz, id):
-        return self.session.query(clazz).filter(clazz.id == id).one()
+    def read(self, clazz, id=None):
+        if id is None:
+            return self.session.query(clazz).all()
+        else:
+            return self.session.query(clazz).filter(clazz.id == id).one()
 
     def update(self, item):
         return self.session.flush()
