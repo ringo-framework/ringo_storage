@@ -10,7 +10,7 @@ Tests for `tedega_storage` module.
 import sqlalchemy as sa
 import pytest
 import datetime
-from tedega_storage.storage import (
+from tedega_storage.rdbms import (
     ENGINE,
     RDBMSStorageBase,
     get_storage,

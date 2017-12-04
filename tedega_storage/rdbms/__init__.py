@@ -1,3 +1,11 @@
-from .base import RDBMSStorageBase, get_storage, init_storage, BaseItem
+from .storage import (
+    ENGINE,
+    scoped_session
+)
+from .base import (
+    RDBMSStorageBase, BaseItem,
+    get_storage, init_storage
+)
 
-__all__ = [RDBMSStorageBase, get_storage, init_storage, BaseItem]
+__all__ = [ENGINE, RDBMSStorageBase, BaseItem,
+           get_storage, init_storage, scoped_session]
