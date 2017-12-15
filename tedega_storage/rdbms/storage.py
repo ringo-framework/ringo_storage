@@ -73,10 +73,7 @@ class Storage(object):
         return item_id
 
     def read(self, clazz, id=None):
-        if id is None:
-            return self.session.query(clazz).all()
-        else:
-            return self.session.query(clazz).filter(clazz.id == id).one()
+        return self.session.query(clazz).filter(clazz.id == id).one()
 
     def update(self, item):
         return self.session.flush()
