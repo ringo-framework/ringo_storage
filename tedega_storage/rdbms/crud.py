@@ -17,7 +17,7 @@ from tedega_view import NotFound, ClientError
 from tedega_storage.rdbms.base import BaseItem
 
 
-def _search(storage, clazz, limit=20, offset=0, search="", sort=""):
+def search(storage, clazz, limit=20, offset=0, search="", sort=""):
     """Will return all instances of `clazz`.
 
     :storage: Session to the database.
@@ -59,7 +59,7 @@ def _search(storage, clazz, limit=20, offset=0, search="", sort=""):
     return query.slice(offset, limit).all()
 
 
-def _create(storage, clazz, values):
+def create(storage, clazz, values):
     """Will return a new instance of `clazz`. The new instance will be
     added to the given `storage` session and is initiated with the given
     `values`
@@ -91,7 +91,7 @@ def _create(storage, clazz, values):
     return instance
 
 
-def _read(storage, clazz, item_id):
+def read(storage, clazz, item_id):
     """Will return a instance of `clazz`. The instance is read from the
     given `storage` session.
 
@@ -121,7 +121,7 @@ def _read(storage, clazz, item_id):
     return instance
 
 
-def _update(storage, clazz, item_id, values):
+def update(storage, clazz, item_id, values):
     """Will update a instance of `clazz`. The instance is read from the
     given `storage` session and then updated with the given values. Values
     for attributes which are not part of `clazz` are silently ignored.
@@ -159,7 +159,7 @@ def _update(storage, clazz, item_id, values):
     return instance
 
 
-def _delete(storage, clazz, item_id):
+def delete(storage, clazz, item_id):
     """Will delete a instance of `clazz`. The instance will be removed
     from the database.
 
