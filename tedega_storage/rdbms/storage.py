@@ -44,7 +44,6 @@ class Storage(object):
 
         """
         self.engine = engine
-        #RDBMSStorageBase.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
 
