@@ -84,7 +84,7 @@ class Storage(object):
         self.session.delete(item)
 
 
-DEFAUL_DB_URI = "sqlite:///:memory:"
+DEFAUL_DB_URI = "sqlite:///default.db"
 DB_URI = os.environ.get("TEDEGA_STORAGE_URI", DEFAUL_DB_URI)
 ENGINE = create_engine(DB_URI, echo=False)
 if str(ENGINE.url).find("sqlite") > -1:
